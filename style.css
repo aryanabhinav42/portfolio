@@ -1,0 +1,85 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-color: black;
+    font-family: Arial, sans-serif; /* Add a font family */
+    line-height: 1.6; /* Improve line height */
+}
+
+#intro {
+    color: beige;
+    font-size: 1.2em; /* Slightly larger font */
+    margin: 20px auto;
+    max-width: 800px; /* Limit width for readability */
+}
+
+h1 {
+    font-size: 2.5em; /* Larger heading */
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1em;
+    color: #ccc; /* Lighter color for footer */
+}
+
+img {
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: #4CAF50; /* Green line */
+    width: 25%; /* Match the HTML width */
+    margin: 20px auto;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+#footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #111; /* Dark footer background */
+    text-align: center;
+}
+
+.button {
+    background: linear-gradient(45deg, #4CAF50, #45a049); /* Gradient background */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 25px; /* More rounded */
+    transition: all 0.3s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.button:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50); /* Reverse gradient on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+}
+
+.button:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
