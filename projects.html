@@ -23,6 +23,55 @@
         header a:hover {
             text-decoration: underline;
         }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 1200px;
+            height: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100% - 50px);
+            border: none;
+        }
+        button {
+            background: none;
+            border: none;
+            color: #4CAF50;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: inherit;
+        }
+        button:hover {
+            color: #45a049;
+        }
     </style>
 </head>
 
@@ -34,8 +83,59 @@
         <h1>My Projects</h1>
         <p>Here are some of my projects...</p>
         <P>Projects are in Development phase, It will be updated soon....</P>
-        <!-- Add project details here -->
+        <div class="project">
+            <h2>Ecommerce Website</h2>
+            <p>A simple ecommerce website built with HTML, CSS, and JavaScript featuring product listings and a shopping cart.</p>
+            <button onclick="openModal('projects/ecommerce/index.html')">View Project</button>
+        </div>
+        <div class="project">
+            <h2>Blogging Page</h2>
+            <p>A personal blog website with sample posts, built using HTML and CSS.</p>
+            <button onclick="openModal('projects/blog/index.html')">View Project</button>
+        </div>
+        <div class="project">
+            <h2>Photo Gallery</h2>
+            <p>A responsive photo gallery with modal view functionality, built using HTML, CSS, and JavaScript.</p>
+            <button onclick="openModal('projects/photo-gallery/index.html')">View Project</button>
+        </div>
+        <!-- Add more project details here -->
     </div>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="projectFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openModal(url) {
+            const modal = document.getElementById('projectModal');
+            const iframe = document.getElementById('projectFrame');
+            iframe.src = url;
+            modal.style.display = 'block';
+            // Auto-close after 10 seconds
+            setTimeout(() => {
+                closeModal();
+            }, 30000);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+            const iframe = document.getElementById('projectFrame');
+            iframe.src = ''; // Clear the iframe src to stop loading
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 
 </html>
