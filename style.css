@@ -70,6 +70,7 @@ hr {
     border-radius: 25px; /* More rounded */
     transition: all 0.3s ease; /* Smooth transitions */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 140px; /* Fixed width to make all buttons the same size */
 }
 
 .button:hover {
